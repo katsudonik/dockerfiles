@@ -42,7 +42,7 @@ services:
       ELASTICSEARCH_URL: "http://elasticsearch:9200"
     volumes:
       - ./dockerfile/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ./dockerfile/logstash/mysql-connector-java-8.0.18.jar:/usr/share/logstash/logstash-core/lib/jars/mysql-connector-java-8.0.18.jar
+      - ./dockerfile/logstash/mysql-connector-java-8.0.18.jar:/usr/share/logstash/logstash-core/lib/jars/mysql-connector-java-8.0.18.jar # download jar from https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.18 
     ports:
       - 5044:5044
     links:
