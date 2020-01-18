@@ -1,4 +1,4 @@
-# elastic docker images
+# elastic docker images (exists >= 5.2)
 - https://www.docker.elastic.co/#
 
 # elasticsearch clients
