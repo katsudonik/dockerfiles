@@ -11,7 +11,7 @@ services:
       MYSQL_PASSWORD: {password}
       TZ: 'Asia/Tokyo'
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql # backup mysql data
       - ./schemas:/docker-entrypoint-initdb.d # set DDL in ./schemas
     restart: always
   elasticsearch:
