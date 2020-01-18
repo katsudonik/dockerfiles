@@ -1,5 +1,14 @@
 # dockerfiles
 
+## use flow
+### create image & share
+1. create docker-compose.yml, Dockerfile in pj git repository
+2. create image by Dockerfile
+3. push image to docker hub
+### download shared image & use
+1. git pull docker-compose.yml, Dockerfile from pj git repository
+2. run docker-compose to download image
+
 ## install
 ### mac
 https://github.com/katsudonik/knowledge/blob/master/mac/dev_env/docker.md
