@@ -15,7 +15,7 @@ services:
       - ./schemas:/docker-entrypoint-initdb.d # set init data (DDL and initialize sql) in ./schemas
     restart: always
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0 # version correspondence to client language version (See..version matrix of client)
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
@@ -31,13 +31,13 @@ services:
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.2.0
+    image: docker.elastic.co/kibana/kibana:7.2.0 # version must same with elasticsearch
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9200"
     ports:
       - 5601:5601
   logstash:
-    image: docker.elastic.co/logstash/logstash:7.2.0
+    image: docker.elastic.co/logstash/logstash:7.2.0 # version must same with elasticsearch
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9200"
     volumes:
