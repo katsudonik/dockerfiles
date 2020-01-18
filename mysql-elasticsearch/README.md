@@ -7,3 +7,6 @@
 |lanuage|git|
 |---|---|
 |php|https://github.com/elastic/elasticsearch-php|
+
+# past versions
+- download rpm from: https://www.elastic.co/jp/downloads/past-releases#elasticsearch
