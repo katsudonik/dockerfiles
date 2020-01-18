@@ -48,7 +48,7 @@ docker-compose stop [container name of docker-compose.yml]
 docker-compose rm -f [container name of docker-compose.yml]
 ```
 
-3. rebuild container
+3. rebuild container (if using "build")
 ```
 docker-compose build --no-cache [container name of docker-compose.yml]
 ```
