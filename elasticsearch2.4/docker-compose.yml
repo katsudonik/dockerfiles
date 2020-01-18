@@ -1,0 +1,39 @@
+version: "2"
+services:
+  db:
+    build: ./mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: {database}
+      MYSQL_USER: {user}
+      MYSQL_PASSWORD: {password}
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./db:/var/lib/mysql # backup mysql data
+      - ./schemas:/docker-entrypoint-initdb.d # set init data (DDL and initialize sql) in ./schemas
+    restart: always
+  elasticsearch:
+    image: elasticsearch:2.4
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+    volumes:
+      - /usr/local/manabi/elasticsearch/data:/usr/share/elasticsearch/data
+  kibana:
+    image: kibana:4.6.1
+    container_name: kibana
+    environment:
+      ELASTICSEARCH_URL: "http://elasticsearch:9200"
+    ports:
+      - 5601:5601
