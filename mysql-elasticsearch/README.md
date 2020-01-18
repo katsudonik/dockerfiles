@@ -1,5 +1,5 @@
-# elastic docker images (exists >= 5.2)
-- https://www.docker.elastic.co/#
+# elastic docker images
+- https://hub.docker.com/_/elasticsearch?tab=tags
 
 # elasticsearch clients
 - see "Version Matrix" & "[language] Version Requirement"
