@@ -41,8 +41,8 @@ services:
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9200"
     volumes:
-      - /usr/local/manabi/dcenv/dockerfile/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - /usr/local/manabi/dcenv/dockerfile/logstash/mysql-connector-java-8.0.18.jar:/usr/share/logstash/logstash-core/lib/jars/mysql-connector-java-8.0.18.jar
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash/mysql-connector-java-8.0.18.jar:/usr/share/logstash/logstash-core/lib/jars/mysql-connector-java-8.0.18.jar
     ports:
       - 5044:5044
     links:
