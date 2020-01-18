@@ -8,5 +8,5 @@
 |---|---|
 |php|https://github.com/elastic/elasticsearch-php|
 
-# past versions
+# past versions (kibana:2.4 not exists)
 - download rpm from: https://www.elastic.co/jp/downloads/past-releases#elasticsearch
