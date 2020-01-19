@@ -58,6 +58,11 @@ docker-compose build --no-cache [container name of docker-compose.yml]
 docker-compose up -d
 ```
 
+### reflect change of docker-compose.yml
+```
+docker-compose up -d
+```
+
 ### show log of container
 ```
 docker-compose logs [container name of docker-compose.yml]
